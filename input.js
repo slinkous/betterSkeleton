@@ -1,5 +1,8 @@
-export default class InputHandler {
+export let inputStates = {};
+
+export class InputHandler {
   constructor(game){
+    inputStates = {}
     document.addEventListener("keydown", event => {
       switch(event.keyCode){
         case 27:
@@ -10,6 +13,10 @@ export default class InputHandler {
           game.start();
           break;
       }
+      inputStates[event.keyCode] = true;
+    });
+    document.addEventListener("keyup", event => {
+      inputStates[event.keyCode] = false;
     });
   }
 };
