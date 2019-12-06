@@ -55,15 +55,15 @@ export default class Player {
     this.scale = this.width / width;
     this.sprite = new Sprite(spriteSheet, rows, cols, width, height);
   }
-  draw(ctx){
+  draw(ctx, x=this.x, y=this.y){
     if(!this.sprite){
       ctx.strokeStyle = "#FF0000";
-      ctx.rect(this.x, this.y, this.width, this.height)
+      ctx.rect(x, y, this.width, this.height)
     }else{
       if(this.xSpeed == 0 && this.ySpeed == 0){
-        this.sprite.drawStill(ctx, this.x, this.y, this.scale)
+        this.sprite.drawStill(ctx, x, y, this.scale)
       } else {
-        this.sprite.animate(ctx, this.x, this.y, this.scale)
+        this.sprite.animate(ctx, x, y, this.scale)
       }
     }
 

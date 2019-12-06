@@ -15,7 +15,7 @@ export default class Game {
     this.gameHeight = gameHeight;
     this.gamestate = GAMESTATE.MENU;
     this.gameObjects = [];
-    this.player = new Player(this);
+    this.player = new Player(this, gameWidth/2, gameHeight/2);
     let snailImage = document.querySelector('#snailImage');
     this.player.createSprite(snailImage, 4, 4, 40, 40)
 
@@ -40,9 +40,18 @@ export default class Game {
 
   }
   draw(ctx){
-    this.gameObjects.forEach(object => {
-      object.draw(ctx, object.x, object.y);
-    });
+    let bgImage = document.querySelector("#spaceBackground");
+    ctx.save();
+    ctx.translate(this.gameWidth/2, this.gameHeight/2);
+    ctx.drawImage(bgImage, 0 -this.player.x, 0 - this.player.y, this.gameWidth, this.gameHeight)
+    ctx.drawImage(bgImage, this.gameWidth -this.player.x, 0 - this.player.y, this.gameWidth, this.gameHeight)
+    // this.gameObjects.forEach(object => {
+    //   object.draw(ctx, object.x, object.y);
+    // });
+    this.player.draw(ctx, 0 - this.player.width/2, 0 - this.player.width/2);
+    ctx.restore();
+
+    console.log("x: " + this.player.x, "y: " + this.player.y)
 
     if(this.gamestate === GAMESTATE.PAUSED){
       ctx.rect(0, 0, this.gameWidth, this.gameHeight);
