@@ -1,23 +1,48 @@
 import {Game} from "./game.js"
 
-const colorScheme = [
- "#08141E", //black
-  "#0F2A3F", //dark
-  "#20394F", //dark-medium cool
-  "#4E495F", //dark-medium warm
-  "#816271", //medium
-  "#997577", //medium-light
-  "#C3A38A", //light
-  "#F6D6BD" //white
-]
 //https://lospec.com/palette-list/nyx8
+// const colorScheme = [
+//  "#08141E", //black
+//   "#0F2A3F", //dark
+//   "#20394F", //dark-medium cool
+//   "#4E495F", //dark-medium warm
+//   "#816271", //medium
+//   "#997577", //medium-light
+//   "#C3A38A", //light
+//   "#F6D6BD" //white
+// ]
+
+//https://lospec.com/palette-list/pollen8
+// const colorScheme = [
+//  "#73464c", //black
+//   "#ab5675", //dark
+//   "#34acba", //dark-medium cool
+//   "#ee6a7c", //dark-medium warm
+//   "#72dcbb", //medium
+//   "#ffa7a5", //medium-light
+//   "#ffe07e", //light
+//   "#ffe7d6" //white
+// ]
+
+//https://lospec.com/palette-list/ammo-8
+const colorScheme = [
+ "#040c06", //black
+  "#112318", //dark
+  "#1e3a29", //dark-medium cool
+  "#305d42", //dark-medium warm
+  "#4d8061", //medium
+  "#89a257", //medium-light
+  "#bedc7f", //light
+  "#eeffcc" //white
+]
+
 
 const font = "DPComic";
 
 
 let body = document.querySelector("body")
-body.style.backgroundColor = colorScheme[2];
-body.style.color = colorScheme[5];
+body.style.backgroundColor = colorScheme[4];
+body.style.color = colorScheme[1];
 body.style.font = "2em " + font;
 let meta = document.querySelector("#metaInf")
 let colorContainer = document.querySelector("#colorContainer")
