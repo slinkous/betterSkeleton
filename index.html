@@ -4,20 +4,34 @@
     <meta charset="utf-8">
     <title>Game Template</title>
     <style media="screen">
-      #gameCanvas {
-        border: 1px solid black;
+      @font-face{
+        font-family: DPComic;
+        src: url("dpcomic.ttf")
       }
-      img {
+      #gameContainer {
+        /* position: absolute; */
+      }
+      #gameCanvas {
+        /* border: 1px solid black; */
+      }
+      #metaInf {
+        display: flex;
+      }
+      #gameAssets img {
         display: none;
       }
     </style>
     <script src="/js/index.js" charset="utf-8" type="module"></script>
   </head>
   <body>
-    <img class="gameImage" id="snailImage" src="snail.png">
-    <img class="gameImage" id="spaceBackground" src="spaceBackground.png">
-    <audio id="gameMusic" src="ScottHolmesDuckPond.mp3"></audio>
-    <canvas id="gameCanvas" width="800" height="800"></canvas>
-    <div class="meta-info"></div>
+
+    <div id="gameContainer">
+      <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <span id="metaInf"></span>
+    <div id="gameAssets">
+      <!-- <audio id="gameMusic" src=""></audio> -->
+    </div>
   </body>
 </html>

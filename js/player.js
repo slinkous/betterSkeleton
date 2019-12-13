@@ -20,28 +20,28 @@ export default class Player {
     this.xSpeed = 0;
     this.ySpeed = 0;
 
-    if(input[39]){
+    if(input.right){
       this.direction = "right";
       this.xSpeed = this.speed;
       if(this.sprite){
         this.sprite.currentAnimation = 0;
       }
     }
-    if(input[37]){
+    if(input.left){
       this.direction = "left";
       this.xSpeed = -this.speed;
       if(this.sprite){
         this.sprite.currentAnimation = 1;
       }
     }
-    if(input[38]){
+    if(input.up){
       this.direction = "up";
       this.ySpeed = -this.speed;
       if(this.sprite){
         this.sprite.currentAnimation = 2;
       }
     }
-    if(input[40]){
+    if(input.down){
       this.direction = "down";
       this.ySpeed = this.speed;
       if(this.sprite){

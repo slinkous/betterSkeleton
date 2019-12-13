@@ -1,21 +1,48 @@
-export let inputStates = {};
+import GAMESTATE from "/js/game.js";
 
-export class InputHandler {
+export default class InputHandler {
   constructor(game){
-    inputStates = {}
+    this.inputStates = {}
     document.addEventListener("keydown", event => {
       switch(event.keyCode){
+        case 37:
+          this.inputStates["left"] = true;
+          break;
+        case 38:
+          this.inputStates["up"] = true;
+          break;
+        case 39:
+          this.inputStates["right"] = true;
+          break;
+        case 40:
+          this.inputStates["down"] = true;
+          break;
         case 27:
           game.togglePause();
           break;
-        case 32:
+        case 13:
           game.start();
+          // if(game.gamestate == GAMESTATE.MENU) game.start();
+          // if(game.gamestate == GAMESTATE.RUNNING) game.gamestate = GAMESTATE.GAMEOVER;
           break;
       }
-      inputStates[event.keyCode] = true;
+      this.inputStates[event.keyCode] = true;
     });
     document.addEventListener("keyup", event => {
-      inputStates[event.keyCode] = false;
+      switch(event.keyCode){
+        case 37:
+          this.inputStates["left"] = false;
+          break;
+        case 38:
+          this.inputStates["up"] = false;
+          break;
+        case 39:
+          this.inputStates["right"] = false;
+          break;
+        case 40:
+          this.inputStates["down"] = false;
+          break;
+      }
     });
   }
 };
