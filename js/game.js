@@ -10,7 +10,7 @@ export const GAMESTATE = {
   GAMEOVER: 3
 }
 
-export default class Game {
+export class Game {
   constructor(gameWidth, gameHeight){
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
@@ -20,6 +20,7 @@ export default class Game {
     this.gameObjects = [];
     this.map = new TileMap(gameWidth, gameHeight)
     new InputHandler(this);
+
   }
 
   start(){
@@ -40,7 +41,7 @@ export default class Game {
   draw(ctx, colorScheme, font){
 
     ctx.save();
-    ctx.fillStyle = colorScheme.lightMedium;
+    ctx.fillStyle = colorScheme[6];
     ctx.fillRect(0, 0, this.gameWidth, this.gameHeight);
     ctx.restore();
 
@@ -50,25 +51,25 @@ export default class Game {
       ctx.fill();
 
       ctx.font = "3em " + font;
-      ctx.fillStyle = colorScheme.medium;
+      ctx.fillStyle = colorScheme[4];
       ctx.textAlign = "center";
       ctx.fillText("Paused", this.gameWidth/2, this.gameHeight/2);
     }
     if(this.gamestate === GAMESTATE.MENU){
-      ctx.fillStyle = colorScheme.dark;
+      ctx.fillStyle = colorScheme[1];
       ctx.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
       ctx.font = "3em " + font;
-      ctx.fillStyle = colorScheme.lightMedium;
+      ctx.fillStyle = colorScheme[6];
       ctx.textAlign = "center";
       ctx.fillText("Menu", this.gameWidth/2, this.gameHeight/2);
     }
     if(this.gamestate === GAMESTATE.GAMEOVER){
-      ctx.fillStyle = colorScheme.medium;
+      ctx.fillStyle = colorScheme[4];
       ctx.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
       ctx.font = "3em " + font;
-      ctx.fillStyle = colorScheme.darkMedium;
+      ctx.fillStyle = colorScheme[5];
       ctx.textAlign = "center";
       ctx.fillText("Game Over", this.gameWidth/2, this.gameHeight/2);
     }
@@ -82,4 +83,5 @@ export default class Game {
       this.music.pause()
     }
   }
+
 }

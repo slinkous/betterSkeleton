@@ -1,4 +1,4 @@
-import GAMESTATE from "/js/game.js";
+import {GAMESTATE} from "/js/game.js";
 
 export default class InputHandler {
   constructor(game){
@@ -21,9 +21,11 @@ export default class InputHandler {
           game.togglePause();
           break;
         case 13:
-          game.start();
-          // if(game.gamestate == GAMESTATE.MENU) game.start();
-          // if(game.gamestate == GAMESTATE.RUNNING) game.gamestate = GAMESTATE.GAMEOVER;
+          // game.start();
+          console.log(GAMESTATE)
+          if(game.gamestate == GAMESTATE.MENU){
+            game.start();
+          }
           break;
       }
       this.inputStates[event.keyCode] = true;
