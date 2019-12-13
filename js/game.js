@@ -1,6 +1,7 @@
 import InputHandler from "/js/input.js";
 import Player from "/js/player.js";
 import Sprite from "/js/sprite.js"
+import TileMap from "/js/tile.js"
 
 export const GAMESTATE = {
   PAUSED: 0,
@@ -17,7 +18,7 @@ export default class Game {
     // this.music = document.querySelector("#gameMusic");
     // this.music.loop = true;
     this.gameObjects = [];
-
+    this.map = new TileMap(gameWidth, gameHeight)
     new InputHandler(this);
   }
 
@@ -25,6 +26,7 @@ export default class Game {
     if(this.gamestate !== GAMESTATE.MENU) return;
     this.gameObjects = [this.player];
     this.gamestate = GAMESTATE.RUNNING;
+
     // this.music.play()
   }
   update(deltaTime){

@@ -20,7 +20,6 @@ let meta = document.querySelector("#metaInf")
 
 for(let c in colorScheme){
   let d = document.createElement("div");
-  console.log(d)
   d.style.width = "64px";
   d.style.height = "64px";
   d.style.backgroundColor = colorScheme[c];
