@@ -10,4 +10,9 @@ This project is intended to be a reusable skeleton for 2D HTML5 game development
   - mouse
   - game pad
 
-- Camera 
+- Camera
+
+## Attributions
+
+- Color Scheme:
+- Font: [DPComic Font by codeman38](https://www.1001fonts.com/dpcomic-font.html)
