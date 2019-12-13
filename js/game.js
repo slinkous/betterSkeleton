@@ -18,7 +18,6 @@ export class Game {
     // this.music = document.querySelector("#gameMusic");
     // this.music.loop = true;
     this.gameObjects = [];
-    this.map = new TileMap(gameWidth, gameHeight)
     new InputHandler(this);
 
   }
