@@ -4,6 +4,7 @@ export default class InputHandler {
   constructor(game){
     this.inputStates = {}
     document.addEventListener("keydown", event => {
+      event.preventDefault();
       switch(event.keyCode){
         case 37:
           this.inputStates["left"] = true;
@@ -31,6 +32,7 @@ export default class InputHandler {
       this.inputStates[event.keyCode] = true;
     });
     document.addEventListener("keyup", event => {
+      event.preventDefault();
       switch(event.keyCode){
         case 37:
           this.inputStates["left"] = false;

@@ -1,7 +1,7 @@
-import InputHandler from "/js/input.js";
-import Player from "/js/player.js";
-import Sprite from "/js/sprite.js"
-import TileMap from "/js/tile.js"
+import InputHandler from "./input.js";
+import Player from "./player.js";
+import Sprite from "./sprite.js"
+import TileMap from "./tile.js"
 
 export const GAMESTATE = {
   PAUSED: 0,
