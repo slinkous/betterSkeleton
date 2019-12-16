@@ -10,6 +10,9 @@ This project is intended to be a reusable skeleton for 2D HTML5 game development
   - mouse
   - game pad
 
+- Inputs are dependent on game, game on inputStates
+  - maybe add handling to game class, have inputs just toggle States
+
 - Camera
 
 ## Attributions
@@ -17,7 +20,7 @@ This project is intended to be a reusable skeleton for 2D HTML5 game development
 ### Colors
 - [NYX8 PALETTE by Javier Guerrero](https://lospec.com/palette-list/nyx8)
 - [POLLEN8 PALETTE by Conker](https://lospec.com/palette-list/pollen8)
-- [AMMO-8 PALETTE by rsvp asap.](https://lospec.com/palette-list/ammo-8)
+- [AMMO-8 PALETTE by rsvp asap](https://lospec.com/palette-list/ammo-8)
 
 ### Fonts
 - Font: [DPComic Font by codeman38](https://www.1001fonts.com/dpcomic-font.html)

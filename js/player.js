@@ -1,7 +1,7 @@
 import Sprite from './sprite.js';
 
 export default class Player {
-  constructor(game, x=0, y=0, width=100, height=100, speed=1){
+  constructor(game, x=0, y=0, width=32, height=32, speed=1){
     this.x = x;
     this.y = y;
     this.width = width;
@@ -58,7 +58,7 @@ export default class Player {
   draw(ctx, x=this.x, y=this.y){
     if(!this.sprite){
       ctx.strokeStyle = "#FF0000";
-      ctx.rect(x, y, this.width, this.height)
+      ctx.strokeRect(x, y, this.width, this.height)
     }else{
       if(this.xSpeed == 0 && this.ySpeed == 0){
         this.sprite.drawStill(ctx, x, y, this.scale)

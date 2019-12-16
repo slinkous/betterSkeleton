@@ -18,7 +18,9 @@ export class Game {
     // this.music = document.querySelector("#gameMusic");
     // this.music.loop = true;
     this.gameObjects = [];
-    new InputHandler(this);
+    this.input = new InputHandler(this);
+
+    this.player = new Player(this)
 
   }
 
@@ -35,7 +37,10 @@ export class Game {
       this.gamestate === GAMESTATE.MENU ||
       this.gamestate === GAMESTATE.GAMEOVER
     ) return;
+    this.input.update();
 
+    this.player.move(this.input.inputStates)
+    console.log(this.player.x, this.player.y)
   }
   draw(ctx, colorScheme, font){
 
@@ -43,6 +48,7 @@ export class Game {
     ctx.fillStyle = colorScheme[6];
     ctx.fillRect(0, 0, this.gameWidth, this.gameHeight);
     ctx.restore();
+    this.player.draw(ctx)
 
     if(this.gamestate === GAMESTATE.PAUSED){
       ctx.rect(0, 0, this.gameWidth, this.gameHeight);
@@ -76,10 +82,10 @@ export class Game {
   togglePause(){
     if(this.gamestate == GAMESTATE.PAUSED){
       this.gamestate = GAMESTATE.RUNNING;
-      this.music.play()
+      // this.music.play()
     } else {
       this.gamestate = GAMESTATE.PAUSED;
-      this.music.pause()
+      // this.music.pause()
     }
   }
 
